@@ -6,7 +6,7 @@ on:
 
 jobs:
   check:
-    runs-ons: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "🥝 Starting..."
       - name: Check out repository code ✈️
