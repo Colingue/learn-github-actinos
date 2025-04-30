@@ -1,0 +1,26 @@
+name: "Exo 4 - Pull Request & Review"
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-ons: ubuntu-latest
+    steps:
+      - run: echo "🥝 Starting..."
+      - name: Check out repository code ✈️
+        uses: actions/checkout@v4
+      - name: Setup Node 🎯
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies ⭐️
+        run: npm ci
+
+      - name: Lint 🍱
+        run: npm run lint
+
+      - name: Tests 🧪
+        run: npm run test
