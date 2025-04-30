@@ -1,6 +1,9 @@
 name: Ex 2 - Tests
 
-on: [push]
+on:
+  push:
+    branches: [main]
+
 jobs:
   exercise:
     runs-on: ubuntu-latest
