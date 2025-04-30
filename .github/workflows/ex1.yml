@@ -1,0 +1,16 @@
+name: Ex 1
+
+on: [push]
+jobs:
+  exercise:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🥝 Starting..."
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Setup Node
+      - uses: actions/setup-node@v4
+      - name: Lint
+      - run: npm run lint
+      - name: Build App
+      - run: npm run build
