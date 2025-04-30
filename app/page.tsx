@@ -5,7 +5,7 @@ export default function Page() {
     <div>
       <h1>Home</h1>
       <h2>Colin</h2>
-      <Link href="/about">About</Link>
+      <Link href="/about">About coucou je suis la CI</Link>
     </div>
   );
 }
