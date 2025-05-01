@@ -1,0 +1,33 @@
+name: Ex 2 - Matrix Node Versions
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  exercise:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ["18.x", "20.x"]
+
+    steps:
+      - run: echo "🥝 Starting..."
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Tests
+        run: npm run test
+
+      - name: Build App
+        run: npm run build
